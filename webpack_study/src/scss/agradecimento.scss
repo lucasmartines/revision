@@ -1,0 +1,88 @@
+.image-container{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.painel-agradecimento{
+
+  text-align: center;
+  padding-top: 35%;
+
+
+  @media (min-width: 994px) {
+    padding-top: 20%;
+  }
+
+
+
+  .painel-agradecimento__titulo{
+    
+    margin-bottom: 0;
+    
+    
+    span:first-child {
+      font-weight: 200;
+      font-size: 23px;
+
+      
+      
+      @media(max-width: 480px){
+        font-size: 17px;
+      }
+      
+    }
+    span:last-child{
+      font-weight: bolder;
+      letter-spacing: 2px;
+      font-family: "Helvetica Neu";
+      font-size: 60px;
+      
+      @media( max-width: 480px ){
+        font-size: 47px;
+      }
+    }
+  }
+  
+
+  .painel-agradecimento__nav 
+  {
+    .icon
+    { 
+      padding: 8px;
+      font-size: 24px;
+      width: 42px;
+      height: 42px; 
+      border-radius: 3px;
+      
+      
+      border: 1px solid #d1d1d1;
+      color: white;
+      &:hover{
+        transition: ease-in 0.1s;
+        
+        
+        color:black;
+        background:white;
+      }
+    }
+  }
+}
+
+.image-container::before{
+  display:block;
+  content:"";
+  position: absolute;
+  width:100vw;
+  height: 100vh;
+  z-index: -2;
+  left: 0;
+  
+  
+  
+  opacity: 0.15;
+  background-image: url(https://wallpaperaccess.com/full/1309012.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
