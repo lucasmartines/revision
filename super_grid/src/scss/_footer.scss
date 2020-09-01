@@ -1,0 +1,11 @@
+.footer{
+
+	background:#333;
+
+	
+	&__container{
+		@include container();
+		padding:  30px 20px 20px 20px;
+		 
+	}
+}

@@ -1,7 +1,7 @@
 .first-cta{
 
 	text-align: center;
-	padding: 120px 0 90px 0;
+	padding: 120px 20px 90px 20px;
 	background: url(https://via.placeholder.com/1200x300);
 
 
@@ -12,7 +12,11 @@
 		&__title{
 
 			font-size: 48px;
-			margin-bottom: 10px;	
+			margin-bottom: 10px;
+
+			@media ( max-width: 640px )  {
+				font-size: 24px;		
+			}		
 		}
 
 		&__text{

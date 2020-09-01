@@ -12,11 +12,14 @@ $container-gap-sm: 10px;
 		padding: 60px 10px 10px 10px ;
 	}
 
+
 	&__inner
 	{
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-    	grid-template-rows: 200px 200px 250px;	
+    	//grid-template-rows: 200px 200px 250px;	
+	    grid-template-rows: 25% 25% 35%;
+	    
     	text-align: left;	
 		grid-gap: $container-gap;
 		
@@ -38,6 +41,12 @@ $container-gap-sm: 10px;
 		.grid__item{
 			position:relative;
 
+
+
+			.image-container{
+				overflow: hidden;
+				height: 100%;
+			}
 
 			.grid__item__info
 			{
