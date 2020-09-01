@@ -31,7 +31,8 @@ $grid-gap: 0px;
 
 		.full-grid__item{
 
-			max-height: 200px;
+			height: 160px;
+			max-height: 160px;
 			overflow: hidden;
 			display: flex;
 			align-items:center;
