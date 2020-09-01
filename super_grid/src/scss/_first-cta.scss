@@ -1,15 +1,27 @@
 .first-cta{
 
 	text-align: center;
-	padding: 120px 20px 90px 20px;
-	background: url(https://via.placeholder.com/1200x300);
-
+	
+	background: url(./img/bg_002.jpg);
+	color:white;
 
 	&__container{
 	
 		@include container();
+		padding: 120px 20px 90px 20px;
 
+		
 		&__title{
+
+
+			span
+			{
+
+				
+			    font-size: 50%;
+			    display: block;
+			    line-height: 1;
+			}
 
 			font-size: 48px;
 			margin-bottom: 10px;
@@ -23,7 +35,15 @@
 			margin-bottom: 5px;
 		}
 		&__action{
-			
+			color:white;
+			background:transparent;
+			border-color: white;
+
+			&:hover{
+				color:ddd;
+				background:transparent;
+				border-color: white;				
+			}
 		}
 	}
 }

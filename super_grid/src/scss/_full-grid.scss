@@ -4,12 +4,19 @@ $grid-gap: 0px;
 .full-grid{
 
 
-	margin-top: 64px;
+	margin-top: 0px;
 	text-align: center;
+
+
+
+	@media(max-width: 800px){
+		margin-top: 140px;	
+	}
 
 	&__title{
 		padding-bottom: 20px;
 		font-weight: lighter;
+		text-transform: uppercase;
 	}
 	&__container{
 		//@include container();
@@ -32,6 +39,11 @@ $grid-gap: 0px;
 			img{
 				height: 100%;
 				justify-self: center;
+				transition : all 0.2s;
+			}
+			img:hover{
+				height: 120%;
+				width: 120%;
 			}
 		}
 

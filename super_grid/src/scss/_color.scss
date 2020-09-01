@@ -1,0 +1,34 @@
+$bg_primary: #6398FF;
+
+.main-nav{
+	background-color: $bg_primary;
+
+	ul{
+		li{
+			a{
+				color:white;
+			}
+		}
+	}
+}
+
+.footer{
+	background: $bg_primary;
+	color:white;
+}
+
+.title--blue
+{
+	color: $bg_primary!important;
+}
+
+.btn{
+	border-color: $bg_primary;
+	color: $bg_primary;
+}
+
+
+.first-cta__container__title{
+	color: white;
+	opacity: 0.9;
+}
