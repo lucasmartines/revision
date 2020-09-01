@@ -1,0 +1,72 @@
+.tri-card{
+
+	background: #f9f9f9;
+	margin: 60px 0 90px 0;
+	padding-bottom: 80px;
+
+	.tri-card__title{
+		text-align: center;
+		padding: 20px;
+		font-weight: lighter;
+		text-transform: uppercase;
+		padding: 60px 10px 10px 10px ;
+
+	}
+	
+
+
+	.tri-card__container{
+		max-width:$max-container-width;
+		padding: 0 20px;
+		margin: 0 auto; 
+		display: flex;
+	 	justify-content:center;
+	 	flex-wrap:wrap;
+
+	 	
+		.tri-card__item{	
+			background: white;
+			margin-right: 10px;
+			width: 32%;
+
+			@media (max-width: 760px){
+				width: 50%;
+				margin-bottom: 10px;
+			}
+
+			@media (max-width: 360px){
+				width: 100%;
+			}
+
+
+			img{
+				height: 180px;
+			}
+
+			.tri-card__item__title , .tri-card__item__text , span{
+				padding: 0 10px 0 10px;
+			}
+
+			.tri-card__item__title {
+				padding-top: 15px;
+				padding-bottom: 8px;
+				font-size: 1em;
+				opacity: 0.95;	
+			}
+			.tri-card__item__text , span{
+				font-size:  0.8em;
+				padding-bottom: 20px;
+				width: 70%;
+				opacity: 0.8;	
+			}
+			span{
+				opacity: 0.6;
+				padding-bottom: 2px;
+				display:inline-block;
+			}
+		}
+		.tri-card__item:last-child{
+			margin-right: 0px;
+		}
+	}
+}

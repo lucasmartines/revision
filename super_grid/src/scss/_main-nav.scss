@@ -1,0 +1,32 @@
+
+.main-nav{
+
+	display:flex;
+	width: 100%;
+	justify-content:center;
+	
+	padding: 10px 0 5px 0;
+    background: #E2E2E8;
+
+	ul{
+		display: flex;
+		list-style:none;
+
+		li{
+			a{
+				color: $pr_color;
+				text-decoration: none;
+				display: inline-block;
+				padding: 10px;
+				font-weight: bold;
+				transition: all 0.1s ease-in-out;
+
+				&:hover{
+					color: lighten( $pr_color , 30%);
+				}
+			}
+		}
+	}
+}
+
+

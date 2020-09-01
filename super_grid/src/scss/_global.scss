@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body{
+	font-family: Popins , Arial;
+}
+
+img{
+	width: 100%;
+}
+.btn{
+	border: 2px solid #3333;
+    padding: 10px 15px;
+    margin: 10px 0 10px 0;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background: transparent;
+    &:hover{
+    	border-color: #5555;
+    }
+}
+
+@mixin container(){
+	max-width: $max-container-width;
+	margin: 0 auto;
+}

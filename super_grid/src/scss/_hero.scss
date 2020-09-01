@@ -1,0 +1,32 @@
+
+
+.hero{
+	height: 100vh;
+	width: 100vw;
+	padding: 130px 60px 120px 60px;
+	
+
+	//background: #f1f1f1;
+	background: url(https://via.placeholder.com/1280x600);
+	
+	.hero__wrapper
+	{
+		margin: auto auto 10px auto;
+		max-width: $max-container-width;
+	}
+
+	.hero__content{
+    	width: 40%;
+    	
+
+
+    	h2{
+    		font-size: 48px;
+		    line-height: 1.5;
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+    	}
+
+    	
+	}
+}

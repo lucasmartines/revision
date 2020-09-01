@@ -1,0 +1,25 @@
+.first-cta{
+
+	text-align: center;
+	padding: 120px 0 90px 0;
+	background: url(https://via.placeholder.com/1200x300);
+
+
+	&__container{
+	
+		@include container();
+
+		&__title{
+
+			font-size: 48px;
+			margin-bottom: 10px;	
+		}
+
+		&__text{
+			margin-bottom: 5px;
+		}
+		&__action{
+			
+		}
+	}
+}
