@@ -5,7 +5,7 @@ $pr_color:     #333;
 $sec_color: #333;
 $bg_color: #85144b;
 $bg_form: #4043bf;
-$over-color: #2c00dc6b; 
+$over-color: #2cdc6b; 
 
 $max-container-width: 920px;
 
@@ -24,6 +24,7 @@ $max-container-width: 920px;
 @import "product";
 @import "popup";
 @import "footer";
+@import "ornaments";
 
 
 @import "color";

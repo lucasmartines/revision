@@ -13,14 +13,15 @@ img{
 	display: block;
 }
 .btn{
-	border: 2px solid #3333;
+	border: 2px solid $bg_form;
     padding: 10px 15px;
     margin: 10px 0 10px 0;
     font-weight: bolder;
     text-transform: uppercase;
     background: transparent;
     &:hover{
-    	border-color: #5555;
+    	border-color: #a6c4ff;
+    	color:#a6c4ff;
     }
 }
 

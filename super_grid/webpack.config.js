@@ -12,7 +12,7 @@ module.exports = {
     port: 9000
   },
   entry: './src/js/main.js' ,
-  mode:'development',
+  mode:'production',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'main.js'
