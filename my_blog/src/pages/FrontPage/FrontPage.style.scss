@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.front-page{
+
+  max-width: 960px;
+  margin:0 auto;
+
+  .posts-list{
+
+    li{
+      img{
+        max-height: 150px;
+        overflow: hidden;
+        object-fit: cover;
+      }
+    }
+    
+  }
+
+}
+
+
