@@ -7,8 +7,16 @@
   max-width: 960px;
   margin:0 auto;
 
+  &__controller{
+    text-align: center; 
+  }
+  .titulo{
+    text-align: center;
+  }
   .posts-list{
-
+    .titulo{
+      text-align: left;;
+    }
     li{
       img{
         max-height: 150px;

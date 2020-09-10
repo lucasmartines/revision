@@ -11,8 +11,8 @@ export default () => {
             Version {version}
             <ul>
                 <li> 
-                    <Link to="/admin">Inserir Post </Link>
                     <Link to="/">Blog</Link>
+                    <Link to="/admin">Inserir Post </Link>
                 </li>
             </ul>
         </nav>

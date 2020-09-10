@@ -44,7 +44,7 @@ ul{
 input,textarea,button{
   display:block;
   padding: 5px;
-  border: 1px solid #555;
+  border: 1px solid var(--primary);
   margin:5px;
 }
 .container{
@@ -59,7 +59,32 @@ input,textarea,button{
 .titulo{
     text-align: center;
     padding: 30px 0 20px 0;
+    color: var(--primary);
+}
+button{
+  background: var(--primary);
+  color:white;
+  border: currentColor;
+  display: inline-block;
 
+}
+button[disabled]{
+  opacity: 0.3;
+}
+a{
+  color: var(--secondary);
+  margin-right: 5px;
+  display: inline-block;
+ 
+}
+.titulo a{
+  text-decoration:none;
+}
+a:hover{
+  color: var(--secondary) !important;
+}
+label{
+  color: #6c3779;
 }
 @import "./styles/_navbar.component.scss";
 @import "./pages/admin/Admin.style.scss";

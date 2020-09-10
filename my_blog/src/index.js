@@ -13,7 +13,7 @@ import FrontPage from "./pages/FrontPage/FrontPage.pages";
 import Admin from "./pages/admin/AdminPosts.page";
 import Navbar from './components/Navbar.components'
 import MostrarUmPost from './pages/posts/MostrarUmPost.page'
-
+import NotFound from './pages/notFound/notFound.page'
 
 ReactDOM.render(
   <Metadata>
@@ -25,6 +25,8 @@ ReactDOM.render(
           <Route path="/admin" exact component={Admin} />
           <Route path="/admin/editar_post/:id"  component={Admin} />
           <Route path="/post/:id"  component={MostrarUmPost} />
+
+          <Route path="/not-found" component={NotFound} />
         </Switch>
       </Router>
 

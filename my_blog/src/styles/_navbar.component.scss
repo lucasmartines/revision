@@ -3,7 +3,8 @@
     display:flex;
     padding: 5px;
     color:white;
-    background: var(--primary-bg);
+    background: var(--primary);
+    
     ul{
         display: flex;
         margin: 0;
@@ -11,9 +12,10 @@
             
             a{
                 display:inline-block;
-                padding: 0px 5px;
-                color: var(--primary-cl);
+                padding: 5px 5px;
+                color: var(--primary-overlay);
                 text-decoration:none;
+                background: var(--primary);
             }
         }
     }

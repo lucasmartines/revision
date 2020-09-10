@@ -4,22 +4,24 @@ import {useParams,useLocation,useHistory} from 'react-router-dom'
 import { useMetadata } from '../../context/Metadata.context'
 import savePost from '../../services/post/savePost.service'
 import updatePost from '../../services/post/updatePost.service'
-
+import {Link} from 'react-router-dom'
 
 import firebase from '../../firebase.config'
 
 export default ({}) => {
 
-
-    let [novoPost,setNovoPost]  = useState({
+    let reseted = {
         titulo:"",
         conteudo:""
-    })
+    }
+
+    let [novoPost,setNovoPost]  = useState(reseted)
     let [ version,useVersion ] = useMetadata()
     let [salvandoStatus,setSalvandoStatus ] = useState({
         mensagem:"",
         estouSalvando: false
     })
+
     let location = useLocation();
     let params = useParams()
     let history = useHistory() 
@@ -27,25 +29,38 @@ export default ({}) => {
 
     useEffect( () => {
 
+
+
         const componentStart = async () => 
-        {
-            if( params?.id ){
+        {   
+          
+            if( params.id && params.id != "undefined" ){
                 // modo atualizar
                 let post =  await firebase.firestore().doc("posts/"+params.id).get()
                 post = post.data()
-
                 
-                setNovoPost({
-                    titulo:post.titulo,
-                    id: post.id,
-                    conteudo: post.conteudo,
-                    link: post.link
-                })
+                if( post ){
+                    setNovoPost({
+                        titulo:post.titulo,
+                        id: post.id,
+                        conteudo: post.conteudo,
+                        link: post.link
+                    })
+                }else{
+                    alert("post não existe")
+                    history.push("/")
+                }
+                
             }
+             
         }
+        setNovoPost(reseted)
+
         
         componentStart()
 
+
+        
     } , [location] )
 
 
@@ -60,8 +75,10 @@ export default ({}) => {
 
 
         if(  window.confirm("Quer Deletar") ){
-            firebase.firestore().doc("/posts/"+params.id ).delete()
-            history.push("/")
+            firebase.firestore().doc("/posts/"+params.id ).delete().then( () => {
+                history.push("/")
+            })
+            
         }
 
     }
@@ -80,19 +97,22 @@ export default ({}) => {
         }
     }
 
+    /** it fires when new post is updated */
     const onUpdate = () => {
        
         setSalvandoStatus({estouSalvando:false,mensagem:""})
         alert("updated")        
         
     }
-
+    /* a event that fire when new post is created */
     const onSave = ({id}) => {
          
         setSalvandoStatus({estouSalvando:false,mensagem:""})
         history.push(`/admin/editar_post/${id}`)
         alert("Item salvo com sucesso")
     }
+
+
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -109,18 +129,22 @@ export default ({}) => {
                 savePost({...novoPost } , e.target.file.files[0] , onSave )
             }
 
-            setSalvandoStatus({estouSalvando:false,mensagem:""})
+           
         
     }
 
+    
+
     return(
             <div className="container">
-                <h2 className="titulo"> Admin Blog {version} </h2>
+                <h2 className="titulo">
+                    <Link to={`/post/${params?.id}`}> { novoPost?.titulo} </Link>
+                </h2>
                 <div className="admin-page">
                     <div>
-                        <div>
+                        <div class="admin-page__image">
                             <img src={novoPost.link} /> <br/>
-                            <small> Imagem Antiga </small>
+                            {/* <small> Imagem Antiga </small> */}
                         </div>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="titulo">Nome</label>
@@ -150,24 +174,20 @@ export default ({}) => {
                                 <button 
                                     disabled={salvandoStatus.estouSalvando}
                                     onClick={() => handleSubmit}
-                                > Inserir/Atualizar Post</button> 
-
+                                > { params?.id ? "Atualizar":"Inserir"} </button> 
+                                {params?.id ? ( 
                                 <button 
                                     onClick={  handleDelete }> 
                                     Deletar Post 
                                 </button>
+                                ):""}
                             </div>
-                            {salvandoStatus.estouSalvando?"estou salvando":""}
+
+                            {salvandoStatus.estouSalvando
+                                ?salvandoStatus.mensagem:""}
                         </form>
 
                         
-                    </div>
-                    <div>
-                        <ul>
-                            <li> Blog 1 </li>
-                            <li> Blog 2 </li>
-                            <li> Blog 3 </li>
-                        </ul>
                     </div>
                 </div>
             </div>

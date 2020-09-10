@@ -1,3 +1,13 @@
 .mostrarPostPage{
     padding: 20px;
+    &__postImage{
+        max-height: 600px;
+        overflow:hidden;
+    }
+    img{
+        max-width: fit-content;
+    }
+    .titulo{
+        color: var(--secondary);
+    }
 }
